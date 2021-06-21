@@ -1,0 +1,61 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@page import="evaluation.p12.routes.RouteException"%>
+
+<html>
+
+<head>
+<title>Todo Management</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<style>
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	color: white;
+	height: 100px;
+	text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+<%@ include file="navigation.jspf"%>
+<ul class="nav nav-pills nav-stacked nav-stacked-left pull-left" id="myTab">
+    <li class="active"><a data-toggle="tab" href="/list-route">Accueil</a></li>
+    <li><a data-toggle="tab" href="#stack2">Messages</a></li>
+    <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop1" href="">
+            Route<b class="caret"></b>
+        </a>
+        <ul aria-labelledby="myTabDrop1" role="menu" class="dropdown-menu">
+            <li><a href="/list-route" >routes</a></li>
+            <li><a href="/add-route">Ajout route</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop2" href="">
+            Portions<b class="caret"></b>
+        </a>
+        <ul aria-labelledby="myTabDrop1" role="menu" class="dropdown-menu">
+            <li><a href="/list-route" >routes</a></li>
+			<li><a href="/add-portion">Ajout portion</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop3" href="">
+            Villes<b class="caret"></b>
+        </a>
+        <ul aria-labelledby="myTabDrop3" role="menu" class="dropdown-menu">
+            <li><a href="/list-ville" >villes</a></li>
+			<li><a href="/add-ville">Ajout ville</a></li>
+        </ul>
+    </li>
+    <li class="disabled"><a href="#">Désactiver</a></li>
+</ul>
