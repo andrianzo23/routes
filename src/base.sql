@@ -1,0 +1,3 @@
+create or replace view DebutRoute as (select Route_Ville.Id_Route as Id_Route,Route_Ville.Id_ville as Id_ville,ville.Nom as Nom_ville from Route_Ville join Ville on Route_Ville.Id_ville=Ville.Id_Ville where Pk=0);
+create or replace view FinRoute as (select Route_Fin.Id_Route as Id_route,Route_Fin.Id_ville as Id_ville,ville.Nom as Nom_ville from Route_Fin join Ville on Route_Fin.Id_ville=Ville.Id_Ville);
+create or replace view PointRoute as (select Route.Numero as Numero, DebutRoute.Id_ville as Id_debut,DebutRoute.Nom_ville as debut, Route.Id_Route as Id_Route,FinRoute.Id_ville as Id_fin,FinRoute.Nom_ville as Fin from Route join FinRoute on Route.Id_Route=FinRoute.Id_Route join DebutRoute on Route.Id_Route=DebutRoute.Id_Route);
